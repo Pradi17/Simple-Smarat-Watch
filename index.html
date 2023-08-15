@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Digital Clock</title>
+<style>
+body {
+  background-color: rgb(214, 200, 46);
+}
+
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #030000;
+  font-size: 60px;
+  font-family: Orbitron;
+  letter-spacing: 7px;
+  border: #030000;
+  border-radius: 7px;
+  border-style: dotted;
+
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+}
+</style>
+</head>
+<body>
+<div class="clock">
+  <div class="time">
+    <span id="hours"></span>
+    <span>:</span>
+    <span id="minutes"></span>
+    <span>:</span>
+    <span id="seconds"></span>
+  </div>
+</div>
+<script>
+function showTime() {
+  var date = new Date();
+  var h = date.getHours(); // 0 - 23
+  var m = date.getMinutes(); // 0 - 59
+  var s = date.getSeconds(); // 0 - 59
+  var time = h + ":" + m + ":" + s;
+  document.getElementById("hours").innerHTML = h;
+  document.getElementById("minutes").innerHTML = m;
+  document.getElementById("seconds").innerHTML = s;
+}
+
+setInterval(showTime, 1000); // Update the time every 1 second
+</script>
+</body>
+</html>
